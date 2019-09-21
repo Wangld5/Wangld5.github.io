@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://wangld5.github.io/"/>
   <updated>2019-09-21T04:41:40.032Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://wangld5.github.io/</id>
   
   <author>
     <name>草爵</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>question1</title>
-    <link href="http://yoursite.com/2019/04/22/question1/"/>
-    <id>http://yoursite.com/2019/04/22/question1/</id>
+    <link href="http://wangld5.github.io/2019/04/22/question1/"/>
+    <id>http://wangld5.github.io/2019/04/22/question1/</id>
     <published>2019-04-21T16:16:00.000Z</published>
     <updated>2019-09-21T04:41:40.032Z</updated>
     
@@ -36,14 +36,14 @@
     
     
     
-      <category term="Alogrithm" scheme="http://yoursite.com/tags/Alogrithm/"/>
+      <category term="Alogrithm" scheme="http://wangld5.github.io/tags/Alogrithm/"/>
     
   </entry>
   
   <entry>
     <title>hello, hexo</title>
-    <link href="http://yoursite.com/2019/03/24/hello-hexo/"/>
-    <id>http://yoursite.com/2019/03/24/hello-hexo/</id>
+    <link href="http://wangld5.github.io/2019/03/24/hello-hexo/"/>
+    <id>http://wangld5.github.io/2019/03/24/hello-hexo/</id>
     <published>2019-03-24T03:57:40.000Z</published>
     <updated>2019-03-24T03:57:40.172Z</updated>
     
@@ -57,8 +57,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/03/24/hello-world/"/>
-    <id>http://yoursite.com/2019/03/24/hello-world/</id>
+    <link href="http://wangld5.github.io/2019/03/24/hello-world/"/>
+    <id>http://wangld5.github.io/2019/03/24/hello-world/</id>
     <published>2019-03-24T03:20:49.092Z</published>
     <updated>2019-03-24T03:20:49.092Z</updated>
     
