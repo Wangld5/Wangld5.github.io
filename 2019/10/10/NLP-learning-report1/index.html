@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="词向量在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。第二种方法是使用共现矩阵，具体的实现是通过定位中心词汇和窗口大小，利用中心词汇的上下文词汇来构造一个矩阵，在这个矩阵中我们可以判断出与中心词汇频繁出现的词汇有哪些，通过SVD来">
+<meta name="description" content="word embeddings单词嵌入是指通过建立单词间联系的向量通过向量的形式特征化单词，例如使用共现矩阵或者word2vec的方式构造单词向量。 词向量在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。第二种方法是使用共现矩阵，">
 <meta name="keywords" content="NLP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP-learning-report1">
 <meta property="og:url" content="http://wangld5.github.io/2019/10/10/NLP-learning-report1/index.html">
 <meta property="og:site_name" content="草爵的博客">
-<meta property="og:description" content="词向量在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。第二种方法是使用共现矩阵，具体的实现是通过定位中心词汇和窗口大小，利用中心词汇的上下文词汇来构造一个矩阵，在这个矩阵中我们可以判断出与中心词汇频繁出现的词汇有哪些，通过SVD来">
+<meta property="og:description" content="word embeddings单词嵌入是指通过建立单词间联系的向量通过向量的形式特征化单词，例如使用共现矩阵或者word2vec的方式构造单词向量。 词向量在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。第二种方法是使用共现矩阵，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wangld5.github.io/2019/10/10/NLP-learning-report1/report-1.PNG">
 <meta property="og:image" content="http://wangld5.github.io/2019/10/10/NLP-learning-report1/report-2.PNG">
-<meta property="og:updated_time" content="2019-10-10T13:36:20.138Z">
+<meta property="og:updated_time" content="2019-10-11T01:48:27.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP-learning-report1">
-<meta name="twitter:description" content="词向量在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。第二种方法是使用共现矩阵，具体的实现是通过定位中心词汇和窗口大小，利用中心词汇的上下文词汇来构造一个矩阵，在这个矩阵中我们可以判断出与中心词汇频繁出现的词汇有哪些，通过SVD来">
+<meta name="twitter:description" content="word embeddings单词嵌入是指通过建立单词间联系的向量通过向量的形式特征化单词，例如使用共现矩阵或者word2vec的方式构造单词向量。 词向量在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。第二种方法是使用共现矩阵，">
 <meta name="twitter:image" content="http://wangld5.github.io/2019/10/10/NLP-learning-report1/report-1.PNG">
 
 
@@ -368,7 +368,8 @@
       
 
       
-        <h3 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h3><p>在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。<br>获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。<br>第二种方法是使用共现矩阵，具体的实现是通过定位中心词汇和窗口大小，利用中心词汇的上下文词汇来构造一个矩阵，在这个矩阵中我们可以判断出与中心词汇频繁出现的词汇有哪些，通过SVD来对这个矩阵进行降维找到特征值相近的两个单词，那么这两个单词的语义或语境就相似。共现矩阵是统计方法.<br><img src="/2019/10/10/NLP-learning-report1/report-1.PNG" alt><br>第三种是word2vec，主要分为CBOW（Continuous Bag of Words）和Skip-Gram两种模式。CBOW是从原始语句推测目标字词，对于CBOW而言,具体过程是  </p>
+        <h3 id="word-embeddings"><a href="#word-embeddings" class="headerlink" title="word embeddings"></a>word embeddings</h3><p>单词嵌入是指通过建立单词间联系的向量通过向量的形式特征化单词，例如使用共现矩阵或者word2vec的方式构造单词向量。</p>
+<h3 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h3><p>在NLP中，使用向量代表一个单词，词向量又被称为word embeddings。<br>获得词向量的方法包括one-hot,即建立一个one-hot矩阵表示一个词，但这样的话会导致不同的单词有不同的矩阵且他们之间没有任何联系。<br>第二种方法是使用共现矩阵，具体的实现是通过定位中心词汇和窗口大小，利用中心词汇的上下文词汇来构造一个矩阵，在这个矩阵中我们可以判断出与中心词汇频繁出现的词汇有哪些，通过SVD来对这个矩阵进行降维找到特征值相近的两个单词，那么这两个单词的语义或语境就相似。共现矩阵是统计方法.<br><img src="/2019/10/10/NLP-learning-report1/report-1.PNG" alt><br>第三种是word2vec，主要分为CBOW（Continuous Bag of Words）和Skip-Gram两种模式。CBOW是从原始语句推测目标字词，对于CBOW而言,具体过程是  </p>
 <ol>
 <li>为每一个单词的上下文词汇生成一个one-hot向量</li>
 <li>通过输入词向量矩阵U的权重矩阵和这些上下文词汇生成的one-hot向量的乘积</li>
@@ -559,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#词向量"><span class="nav-number">1.</span> <span class="nav-text">词向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相似性评估"><span class="nav-number">2.</span> <span class="nav-text">相似性评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习"><span class="nav-number">3.</span> <span class="nav-text">练习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embeddings"><span class="nav-number">1.</span> <span class="nav-text">word embeddings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词向量"><span class="nav-number">2.</span> <span class="nav-text">词向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相似性评估"><span class="nav-number">3.</span> <span class="nav-text">相似性评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习"><span class="nav-number">4.</span> <span class="nav-text">练习</span></a></li></ol></div>
             
 
           </div>
