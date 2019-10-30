@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangld5.github.io/"/>
-  <updated>2019-10-30T02:06:51.215Z</updated>
+  <updated>2019-10-30T13:25:55.406Z</updated>
   <id>http://wangld5.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NLPlearning-CNN</title>
+    <link href="http://wangld5.github.io/2019/10/30/NLPlearning-CNN/"/>
+    <id>http://wangld5.github.io/2019/10/30/NLPlearning-CNN/</id>
+    <published>2019-10-30T12:39:29.000Z</published>
+    <updated>2019-10-30T13:25:55.406Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h3><p>在NLP中，对一个句子中的word embeddings做卷积是对这个句子提取特征，具体是用一个卷积核对句子的word embeddings做矩阵乘法。</p><h3 id="池化（pooling）"><a href="#池化（pooling）" class="headerlink" title="池化（pooling）"></a>池化（pooling）</h3><p>本质上是对做完卷积的word embeddings进一步提取特征，获取做完卷积那一部分的最大或者平均特征取决于是max pooling还是average pooling。</p><h3 id="多通道（multi-channel）"><a href="#多通道（multi-channel）" class="headerlink" title="多通道（multi-channel）"></a>多通道（multi-channel）</h3><p>多通道是指预训练的词向量不只是一种，一般是两种（word2vec和GloVe）。针对不同的任务，一种通道的词向量会进行调整而另一种通道的词向量不会发生改变保持词之间的相似性。</p><h3 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h3><h4 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h4><p>随机丢弃部分神经元的数据，减少神经元之间联系的紧密性：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.nn.Dropout(p=<span class="number">0.45</span>) <span class="comment"># p=&gt;probability</span></span><br></pre></td></tr></table></figure></p><h4 id="batch-normalization"><a href="#batch-normalization" class="headerlink" title="batch normalization"></a>batch normalization</h4><p>减少每一层过拟合问题。用于在上一层的输出要进入下一层之前。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;卷积&quot;&gt;&lt;a href=&quot;#卷积&quot; class=&quot;headerlink&quot; title=&quot;卷积&quot;&gt;&lt;/a&gt;卷积&lt;/h3&gt;&lt;p&gt;在NLP中，对一个句子中的word embeddings做卷积是对这个句子提取特征，具体是用一个卷积核对句子的word embeddings
+      
+    
+    </summary>
+    
+    
+    
+      <category term="-NLP" scheme="http://wangld5.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>NLPlearning-report-3</title>

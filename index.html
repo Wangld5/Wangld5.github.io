@@ -294,6 +294,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangld5.github.io/2019/10/30/NLPlearning-CNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="草爵">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="草爵的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/30/NLPlearning-CNN/" itemprop="url">NLPlearning-CNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-30T20:39:29+08:00">
+                2019-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h3><p>在NLP中，对一个句子中的word embeddings做卷积是对这个句子提取特征，具体是用一个卷积核对句子的word embeddings做矩阵乘法。</p>
+<h3 id="池化（pooling）"><a href="#池化（pooling）" class="headerlink" title="池化（pooling）"></a>池化（pooling）</h3><p>本质上是对做完卷积的word embeddings进一步提取特征，获取做完卷积那一部分的最大或者平均特征取决于是max pooling还是average pooling。</p>
+<h3 id="多通道（multi-channel）"><a href="#多通道（multi-channel）" class="headerlink" title="多通道（multi-channel）"></a>多通道（multi-channel）</h3><p>多通道是指预训练的词向量不只是一种，一般是两种（word2vec和GloVe）。针对不同的任务，一种通道的词向量会进行调整而另一种通道的词向量不会发生改变保持词之间的相似性。</p>
+<h3 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h3><h4 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h4><p>随机丢弃部分神经元的数据，减少神经元之间联系的紧密性：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.nn.Dropout(p=<span class="number">0.45</span>) <span class="comment"># p=&gt;probability</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="batch-normalization"><a href="#batch-normalization" class="headerlink" title="batch normalization"></a>batch normalization</h4><p>减少每一层过拟合问题。用于在上一层的输出要进入下一层之前。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://wangld5.github.io/2019/10/21/NLPlearning-report-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -735,7 +863,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -748,7 +876,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
