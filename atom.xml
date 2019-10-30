@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangld5.github.io/"/>
-  <updated>2019-10-30T13:25:55.406Z</updated>
+  <updated>2019-10-30T14:16:10.149Z</updated>
   <id>http://wangld5.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NLPlearning-SubwordModel</title>
+    <link href="http://wangld5.github.io/2019/10/30/NLPlearning-SubwordModel/"/>
+    <id>http://wangld5.github.io/2019/10/30/NLPlearning-SubwordModel/</id>
+    <published>2019-10-30T13:29:52.000Z</published>
+    <updated>2019-10-30T14:16:10.149Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>针对词库中词汇量不足的情况，对每一个单词的字母进行embedding。</p><h3 id="Byte-Pair-Encoding"><a href="#Byte-Pair-Encoding" class="headerlink" title="Byte Pair Encoding"></a>Byte Pair Encoding</h3><p>这个算法是一种压缩算法，对于最频繁出现的字母进行组合成为一个新的字母块。</p><ol><li>start with a vocabulary of characters</li><li>most frequent n gram pairs -&gt; new pairs</li><li>detect the dictionary and recycle step 2</li><li>stop until reach the target size of vocabulary</li><li>the pairs in the vocabulary can be use to build new pairs or words</li></ol><h3 id="Fast-text"><a href="#Fast-text" class="headerlink" title="Fast text"></a>Fast text</h3><p>针对word2vec忽略了词之间形态的联系性，因为word2vec使用每个单词生成一个词向量，忽略了单词的内部特征。fast text使用n gram表示单词，一个单词就是n gram字母的集合。与CBOW的对比：</p><ol><li>CBOW的输入是目标单词的上下文，fastText的输入是多个单词及其n-gram特征，这些特征用来表示单个文档；</li><li>CBOW的输入单词被one-hot编码过，fastText的输入特征是被embedding过；</li><li>CBOW的输出是目标词汇，fastText的输出是文档对应的类标。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h3&gt;&lt;p&gt;针对词库中词汇量不足的情况，对每一个单词的字母进行embedding。&lt;/p&gt;
+&lt;h3 id=&quot;Byte-Pair-Encoding&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+    
+    
+      <category term="-NLP" scheme="http://wangld5.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>NLPlearning-CNN</title>
