@@ -365,7 +365,11 @@
       
         
           
-            
+            <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>共指（coreference）：两个词指向同一个意思<br>回指（anaphora）：后一个词指向前一个词，因此后一个词在句子中的意思取决于前一个词。<br>共指消解（coreference resolution）：将句子中共指的单词归类，有点像聚类问题。</p>
+<h3 id="基本模型"><a href="#基本模型" class="headerlink" title="基本模型"></a>基本模型</h3><h4 id="Mention-Pair-models"><a href="#Mention-Pair-models" class="headerlink" title="Mention Pair models"></a>Mention Pair models</h4><p>将所有指代词和被指代的词视为一系列的pair，然后对每一对pair决策是否成立。</p>
+<h4 id="Mention-ranking-models"><a href="#Mention-ranking-models" class="headerlink" title="Mention ranking models"></a>Mention ranking models</h4><p>显式地将mention作为query，对所有candidate做rank（什么鬼，看不懂，直接看后面的解释吧）</p>
+<h3 id="深度增强学习用于mention-ranking指代消解"><a href="#深度增强学习用于mention-ranking指代消解" class="headerlink" title="深度增强学习用于mention-ranking指代消解"></a>深度增强学习用于mention-ranking指代消解</h3><p><img src="https://github.com/Wangld5/images/raw/master/images/coreference.jpg" alt><br>首先是找到句子中的所有mention，然后是为每一个mention和之前的mention建立pair关系，让模型给每一个pair打分。<br>网络模型如下：<br><img src="https://github.com/Wangld5/images/raw/master/images/model.jpg" alt><br>（未完待续，之后有时间再继续理解吧）</p>
+
           
         
       
