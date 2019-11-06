@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangld5.github.io/"/>
-  <updated>2019-11-06T06:46:57.061Z</updated>
+  <updated>2019-11-06T08:21:50.973Z</updated>
   <id>http://wangld5.github.io/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NLPlearning-CoreferenceResolution</title>
+    <link href="http://wangld5.github.io/2019/11/06/NLPlearning-CoreferenceResolution/"/>
+    <id>http://wangld5.github.io/2019/11/06/NLPlearning-CoreferenceResolution/</id>
+    <published>2019-11-06T08:06:11.000Z</published>
+    <updated>2019-11-06T08:21:50.973Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="NLP" scheme="http://wangld5.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NLPleaning-Transformer</title>
+    <link href="http://wangld5.github.io/2019/11/06/NLPleaning-Transformer/"/>
+    <id>http://wangld5.github.io/2019/11/06/NLPleaning-Transformer/</id>
+    <published>2019-11-06T08:05:37.000Z</published>
+    <updated>2019-11-06T11:06:03.685Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p>结构：<br><img src="https://github.com/Wangld5/images/raw/master/images/transformer.jpg" alt><br>实际上，transformer模型是encoder-decoder模型的集成形式，在encoder部分包括了六个encoder层，同样在decoder部分包含了六个decoder层，每一个encoder中包含了两层网络，一个是self-attention，另一个是feed forward neural network。每一个decoder另外在这两层中间包含了encoder-decoder attention，用来联系encoder层中源单词的编码和target的单词编码。</p><h3 id="self-attention"><a href="#self-attention" class="headerlink" title="self-attention"></a>self-attention</h3><p>$Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt d_k})V$<br>这个公式为自注意力的公式，自注意力是用来表示源句中词与词之间的联系性和指代关系，进而根据这个词的上下文推断这个词的词向量，这个公式中的Q，K，V是用句子中对应的词的embedding乘以$W^Q,W^K,W^V$得到的向量query，key，value，然后根据每一个单词的query值对其他单词的key值做点乘，然后归一化（$d_k$是维度）后做softmax函数乘以value值，这个value值和query值相同，用于保存当前词的关注度不变的情况下降低其他词的影响力，最后全部相加求和得到其他所有词对于query向量对应的词的权重，标志这个词在句子中的影响程度。我的理解是对于一个句子中有指代关系的两个词应该会有相同的影响程度表示这两个词在这个句子中是有联系的，词向量也应该相关。<br><img src="https://github.com/Wangld5/images/raw/master/images/QKV-1.jpg" alt><br><img src="https://github.com/Wangld5/images/raw/master/images/QKV-2.jpg" alt>  </p><h3 id="multi-head-attention"><a href="#multi-head-attention" class="headerlink" title="multi-head attention"></a>multi-head attention</h3><p>这个层是多个self-attention相结合构成的，可以拓展关注不同位置的能力，进一步综合每个词在句子中的表现程度。可以说不论是在意思上还是在语法等方面都加以考虑以得到最符合这个句子的该词的词向量。<br>在multi-head中为每一个head维护一套$Q,K,V$，这样的话就会有一套随机生成的$W^Q,W^K,W^V$矩阵，通过优化这些矩阵得到最好的权重，最后将得到的每一个attention矩阵合并在乘以一个$W^0$的矩阵压缩成一个维度和attention相同的矩阵。</p><h3 id="norm"><a href="#norm" class="headerlink" title="norm"></a>norm</h3><p>这个归一化层是为了保证每一个encoder的输出不会在激活函数的饱和区。</p><h3 id="position-embedding"><a href="#position-embedding" class="headerlink" title="position embedding"></a>position embedding</h3><p>从这个图中可以看到输入的词向量会加上该词在句子中的位置embedding作为最终输入，在transformer中每个单词在句子中的position embedding表示为：<br>$PE(pos, 2i)=sin(\frac{pos}{10000\frac{2i}{d_{model}}})$<br>$PE(pos, 2i+1)=cos(\frac{pos}{10000\frac{2i}{d_{model}}})$<br>这样做是考虑了单词的相对位置信息。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>transformer是一种预训练模型用于得到对应于训练集的词向量。相对于RNN而言它有很好的并行性。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Transformer&quot;&gt;&lt;a href=&quot;#Transformer&quot; class=&quot;headerlink&quot; title=&quot;Transformer&quot;&gt;&lt;/a&gt;Transformer&lt;/h3&gt;&lt;p&gt;结构：&lt;br&gt;&lt;img src=&quot;https://github.co
+      
+    
+    </summary>
+    
+    
+    
+      <category term="NLP" scheme="http://wangld5.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>NLPlearning-SubwordModel</title>
